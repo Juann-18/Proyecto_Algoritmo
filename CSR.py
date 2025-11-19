@@ -1,5 +1,3 @@
-from CSC import matriz_a_csc
-
 def matriz_a_csr(matriz):
     valores = []
     columnas = []
@@ -25,9 +23,3 @@ matriz = [
     [4, 0, 0, 0, 0, 0, 0],
     [0, 0, 7, 0, 0, 11, 0]
 ]
-
-
-# valores, filas_idx, ccolumnas = matriz_a_csc(matriz)
-# print("valores:", valores)
-# print("filas:", filas_idx)
-# print("ccolumnas:", ccolumnas)

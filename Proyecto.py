@@ -46,14 +46,25 @@ def submenu(matriz):
     n= int(input("Ingrese la opcion: "))
     if(n == 1): 
         val, fil, col = matriz_a_coo(matriz)
+        mostrar_matriz(matriz)
+        print("")
         print("Valores ", val)
         print("filas ", fil)
         print("columnas ", col)
     elif(n == 2):
-        val, filas, ccolumnas = matriz_a_csr(matriz)
+        val, columnas, cfilas = matriz_a_csr(matriz)
+        mostrar_matriz(matriz)
+        print("")
         print("Valores ", val)
-        print("filas ",filas)
-        print("ccolumnas ", ccolumnas)
+        print("columnas ",columnas)
+        print("cfilas ", cfilas)
+    elif(n == 3):
+        val, filas, ccolumnas = matriz_a_csc(matriz)
+        mostrar_matriz(matriz)
+        print("")
+        print("valores ", val)
+        print("filas ", filas)
+        print("ccolunas ", ccolumnas)
 
 
 menu()

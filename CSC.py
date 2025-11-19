@@ -1,6 +1,4 @@
 def matriz_a_csc(matriz):
-    if not matriz:
-        return [], [], []
     filas = len(matriz)
     columnas = len(matriz[0])
     valores = []
@@ -27,7 +25,7 @@ matriz = [
     [0, 0, 7, 0, 0, 11, 0]
 ]
 
-valores, filas_idx, ccolumnas = matriz_a_csc(matriz)
-print("valores:", valores)
-print("filas:", filas_idx)
-print("ccolumnas:", ccolumnas)
+# valores, filas_idx, ccolumnas = matriz_a_csc(matriz)
+# print("valores:", valores)
+# print("filas:", filas_idx)
+# print("ccolumnas:", ccolumnas)

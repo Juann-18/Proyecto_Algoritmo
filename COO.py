@@ -2,7 +2,7 @@
 # Representación de Matrices Dispersas - Formato Coordenado
 # -------------------------------------------
 
-def generar_coo(matriz):
+def matriz_a_coo(matriz):
     """
     Genera la representación en formato coordenado (COO)
     a partir de una matriz completa.
@@ -48,9 +48,9 @@ matriz_ejemplo = [
     [0, 0, 7, 0, 0, 11, 0]
 ]
 
-# Obtener formato COO
-val, fil, col = generar_coo(matriz_ejemplo)
+# # Obtener formato COO
+# val, fil, col = generar_coo(matriz_ejemplo)
 
-# Mostrar resultado
-imprimir_coo(val, fil, col)
+# # Mostrar resultado
+# imprimir_coo(val, fil, col)
 

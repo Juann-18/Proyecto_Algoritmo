@@ -72,12 +72,7 @@ def obtener_columna_csc(j, num_filas, valores, filas, ccolumnas):
 
 
 def modificar_posicion_coo(i, j, nuevo_valor, valores, filas, columnas):
-    """
-    Modifica la posición (i, j) en la representación COO.
-    Si el nuevo valor es 0, elimina el elemento si existe.
-    Si el nuevo valor no es 0, actualiza o agrega el elemento.
-    Retorna los arrays modificados.
-    """
+
     valores = list(valores)
     filas = list(filas)
     columnas = list(columnas)
@@ -112,10 +107,6 @@ def modificar_posicion_coo(i, j, nuevo_valor, valores, filas, columnas):
 
 
 def modificar_posicion_csr(i, j, nuevo_valor, valores, columnas, cfilas):
-    """
-    Modifica la posición (i, j) en la representación CSR.
-    Retorna los arrays modificados.
-    """
     valores = list(valores)
     columnas = list(columnas)
     cfilas = list(cfilas)
@@ -165,10 +156,6 @@ def modificar_posicion_csr(i, j, nuevo_valor, valores, columnas, cfilas):
 
 
 def modificar_posicion_csc(i, j, nuevo_valor, valores, filas, ccolumnas):
-    """
-    Modifica la posición (i, j) en la representación CSC.
-    Retorna los arrays modificados.
-    """
     valores = list(valores)
     filas = list(filas)
     ccolumnas = list(ccolumnas)
@@ -218,11 +205,7 @@ def modificar_posicion_csc(i, j, nuevo_valor, valores, filas, ccolumnas):
 
 
 def sumar_matrices_coo(valores1, filas1, columnas1, valores2, filas2, columnas2):
-    """
-    Suma dos matrices en formato COO.
-    Retorna la representación COO de la suma.
-    """
-    # Crear un diccionario para almacenar la suma: (fila, columna) -> valor
+
     suma = {}
     
     # Agregar elementos de la primera matriz
@@ -253,10 +236,7 @@ def sumar_matrices_coo(valores1, filas1, columnas1, valores2, filas2, columnas2)
 
 
 def sumar_matrices_csr(valores1, columnas1, cfilas1, valores2, columnas2, cfilas2, num_filas, num_columnas):
-    """
-    Suma dos matrices en formato CSR.
-    Retorna la representación CSR de la suma.
-    """
+
     valores_resultado = []
     columnas_resultado = []
     cfilas_resultado = [0]
@@ -294,10 +274,7 @@ def sumar_matrices_csr(valores1, columnas1, cfilas1, valores2, columnas2, cfilas
 
 
 def sumar_matrices_csc(valores1, filas1, ccolumnas1, valores2, filas2, ccolumnas2, num_filas, num_columnas):
-    """
-    Suma dos matrices en formato CSC.
-    Retorna la representación CSC de la suma.
-    """
+
     valores_resultado = []
     filas_resultado = []
     ccolumnas_resultado = [0]
@@ -335,11 +312,7 @@ def sumar_matrices_csc(valores1, filas1, ccolumnas1, valores2, filas2, ccolumnas
 
 
 def transpuesta_coo(valores, filas, columnas, num_filas_original, num_columnas_original):
-    """
-    Calcula la transpuesta de una matriz en formato COO.
-    La transpuesta intercambia filas por columnas.
-    Retorna la representación COO de la transpuesta.
-    """
+
     # En COO, la transpuesta es simplemente intercambiar filas y columnas
     # Pero necesitamos mantener el orden correcto
     # Ordenamos por (columna, fila) para mantener consistencia
@@ -355,11 +328,7 @@ def transpuesta_coo(valores, filas, columnas, num_filas_original, num_columnas_o
 
 
 def transpuesta_csr(valores, columnas, cfilas, num_filas_original, num_columnas_original):
-    """
-    Calcula la transpuesta de una matriz en formato CSR.
-    La transpuesta de CSR es CSC.
-    Retorna la representación CSC de la transpuesta.
-    """
+
     # La transpuesta de CSR es CSC
     # Recolectar todos los elementos con sus nuevas coordenadas
     elementos = []
@@ -401,11 +370,7 @@ def transpuesta_csr(valores, columnas, cfilas, num_filas_original, num_columnas_
 
 
 def transpuesta_csc(valores, filas, ccolumnas, num_filas_original, num_columnas_original):
-    """
-    Calcula la transpuesta de una matriz en formato CSC.
-    La transpuesta de CSC es CSR.
-    Retorna la representación CSR de la transpuesta.
-    """
+    
     # La transpuesta de CSC es CSR
     # Recolectar todos los elementos con sus nuevas coordenadas
     elementos = []

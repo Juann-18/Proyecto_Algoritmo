@@ -1,17 +1,7 @@
-# -------------------------------------------
-# Representación de Matrices Dispersas - Formato Coordenado
-# -------------------------------------------
+
 
 def matriz_a_coo(matriz):
-    """
-    Genera la representación en formato coordenado (COO)
-    a partir de una matriz completa.
 
-    Retorna tres listas:
-        - valores: lista con los elementos diferentes de cero
-        - filas: índice de la fila de cada valor
-        - columnas: índice de la columna de cada valor
-    """
     valores = []
     filas = []
     columnas = []
@@ -28,9 +18,7 @@ def matriz_a_coo(matriz):
 
 
 def imprimir_coo(valores, filas, columnas):
-    """
-    Imprime la representación COO de forma ordenada.
-    """
+
     print("Representación en Formato Coordenado (COO):\n")
     print("valores  =", valores)
     print("filas    =", filas)

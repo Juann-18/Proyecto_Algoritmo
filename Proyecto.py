@@ -19,9 +19,7 @@ def menu():
         mostrar_matriz(matriz)
     while(True):
         print("")
-        print("=" * 50)
         print("MENÚ PRINCIPAL")
-        print("=" * 50)
         print("1. Obtener la representación")
         print("2. Operaciones")
         print("3. Suma de matrices")
@@ -89,27 +87,25 @@ def mostrar_matriz(matriz):
 
 def submenu(matriz):
     mostrar_matriz(matriz)
-    print("\n" + "=" * 50)
-    print("REPRESENTACIONES DE MATRIZ DISPERSA")
-    print("=" * 50)
+    print("\nREPRESENTACIONES DE MATRIZ DISPERSA")
     
     # COO
     val, fil, col = matriz_a_coo(matriz)
-    print("\n1. COO (Coordinate Format)")
+    print("\n1. COO")
     print("   Valores:  ", val)
     print("   Filas:    ", fil)
     print("   Columnas: ", col)
 
     # CSR
     val, columnas, cfilas = matriz_a_csr(matriz)
-    print("\n2. CSR (Compressed Sparse Row)")
+    print("\n2. CSR")
     print("   Valores:  ", val)
     print("   Columnas: ", columnas)
     print("   CFilas:   ", cfilas)
     
     # CSC
     val, filas, ccolumnas = matriz_a_csc(matriz)
-    print("\n3. CSC (Compressed Sparse Column)")
+    print("\n3. CSC")
     print("   Valores:   ", val)
     print("   Filas:     ", filas)
     print("   CColumnas: ", ccolumnas)
@@ -120,9 +116,7 @@ def submenu_operaciones(matriz):
     
     while True:
         print("")
-        print("=" * 50)
         print("OPERACIONES")
-        print("=" * 50)
         print("1. Obtener elemento")
         print("2. Obtener fila")
         print("3. Obtener columna")
@@ -152,9 +146,7 @@ def submenu_operaciones(matriz):
 
 def submenu_obtener_elemento(matriz, num_filas, num_columnas):
     try:
-        print("\n" + "-" * 50)
         print("OBTENER ELEMENTO")
-        print("-" * 50)
         i = int(input("Ingrese el índice de la fila (i): "))
         j = int(input("Ingrese el índice de la columna (j): "))
         
@@ -194,9 +186,7 @@ def submenu_obtener_elemento(matriz, num_filas, num_columnas):
 
 def submenu_obtener_fila(matriz, num_filas, num_columnas):
     try:
-        print("\n" + "-" * 50)
         print("OBTENER FILA")
-        print("-" * 50)
         i = int(input(f"Ingrese el índice de la fila (0 a {num_filas-1}): "))
         
         if i < 0 or i >= num_filas:
@@ -235,9 +225,7 @@ def submenu_obtener_fila(matriz, num_filas, num_columnas):
 
 def submenu_obtener_columna(matriz, num_filas, num_columnas):
     try:
-        print("\n" + "-" * 50)
         print("OBTENER COLUMNA")
-        print("-" * 50)
         j = int(input(f"Ingrese el índice de la columna (0 a {num_columnas-1}): "))
         
         if j < 0 or j >= num_columnas:
@@ -276,9 +264,7 @@ def submenu_obtener_columna(matriz, num_filas, num_columnas):
 
 def submenu_modificar_posicion(matriz, num_filas, num_columnas):
     try:
-        print("\n" + "-" * 50)
         print("MODIFICAR POSICIÓN")
-        print("-" * 50)
         i = int(input("Ingrese el índice de la fila (i): "))
         j = int(input("Ingrese el índice de la columna (j): "))
         
@@ -353,9 +339,7 @@ def submenu_modificar_posicion(matriz, num_filas, num_columnas):
 
 def submenu_suma_matrices():
     try:
-        print("\n" + "=" * 50)
         print("SUMA DE MATRICES")
-        print("=" * 50)
         
         print("\nSeleccione el formato:")
         print("1. COO")
@@ -369,16 +353,12 @@ def submenu_suma_matrices():
             return
         
         # Solicitar primera matriz
-        print("\n" + "-" * 50)
         print("PRIMERA MATRIZ")
-        print("-" * 50)
         matriz1 = agregar_matriz()
         mostrar_matriz(matriz1)
         
         # Solicitar segunda matriz
-        print("\n" + "-" * 50)
         print("SEGUNDA MATRIZ")
-        print("-" * 50)
         matriz2 = agregar_matriz()
         mostrar_matriz(matriz2)
         
@@ -390,14 +370,15 @@ def submenu_suma_matrices():
         num_filas = len(matriz1)
         num_columnas = len(matriz1[0]) if matriz1 else 0
         
-        print("\n" + "=" * 50)
         print("RESULTADO DE LA SUMA")
-        print("=" * 50)
         
         if formato == 1:
             # COO
             val1, fil1, col1 = matriz_a_coo(matriz1)
+
+            print(val1, fil1, col1 )
             val2, fil2, col2 = matriz_a_coo(matriz2)
+            print(val2, fil2, col2)
             
             print("\nPrimera matriz (COO):")
             print(f"   Valores:  {val1}")
@@ -472,9 +453,7 @@ def submenu_suma_matrices():
 
 def submenu_transpuesta():
     try:
-        print("\n" + "=" * 50)
         print("MATRIZ TRANSPUESTA")
-        print("=" * 50)
         
         # Solicitar matriz
         matriz = agregar_matriz()
@@ -494,9 +473,7 @@ def submenu_transpuesta():
             print("Opción inválida.")
             return
         
-        print("\n" + "=" * 50)
         print("RESULTADO DE LA TRANSPUESTA")
-        print("=" * 50)
         
         if formato == 1:
             # COO

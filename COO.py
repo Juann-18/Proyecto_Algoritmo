@@ -1,5 +1,5 @@
 
-
+#Esta funcion combierte una matriz dispersa a formato COO
 def matriz_a_coo(matriz):
 
     valores = []

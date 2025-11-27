@@ -1,3 +1,4 @@
+#Esta funcion obtiene un elemento de una matriz dispersa en formato CSR
 def obtener_elemento_csr(i,j, valores, posicion, cAcumulativo):
 
     for k in range(cAcumulativo[i], cAcumulativo[i+1]):
@@ -5,13 +6,14 @@ def obtener_elemento_csr(i,j, valores, posicion, cAcumulativo):
             return valores[k]
     return 0
 
+#Esta funcion obtiene un elemento de una matriz dispersa en formato CSC
 def obtener_elemento_csc(i, j, valores, filas, ccolumnas):
     for k in range(ccolumnas[j], ccolumnas[j+1]):
         if filas[k] == i:
             return valores[k]
     return 0
 
-
+#Esta funcion obtiene un elemento de una matriz dispersa en formato COO
 def obtener_elemento_coo(i, j, valores, filas, columnas):
 
     for k in range(len(valores)):
@@ -20,6 +22,7 @@ def obtener_elemento_coo(i, j, valores, filas, columnas):
     return 0
 
 
+#Esta funcion obtiene una fila de una matriz dispersa en formato CSR
 def obtener_fila_csr(i, num_columnas, valores, columnas, cfilas):
     fila = [0] * num_columnas
     for k in range(cfilas[i], cfilas[i+1]):
@@ -27,6 +30,7 @@ def obtener_fila_csr(i, num_columnas, valores, columnas, cfilas):
         fila[col] = valores[k]
     return fila
 
+#Esta funcion obtiene una fila de una matriz dispersa en formato CSC
 def obtener_fila_csc(i, num_columnas, valores, filas, ccolumnas):
     fila = [0] * num_columnas
     for j in range(num_columnas):
@@ -37,6 +41,7 @@ def obtener_fila_csc(i, num_columnas, valores, filas, ccolumnas):
     return fila
 
 
+#Esta funcion obtiene una fila de una matriz dispersa en formato COO
 def obtener_fila_coo(i, num_columnas, valores, filas, columnas):
     fila = [0] * num_columnas
     for k in range(len(valores)):
@@ -45,6 +50,7 @@ def obtener_fila_coo(i, num_columnas, valores, filas, columnas):
     return fila
 
 
+#Esta funcion obtiene una columna de una matriz dispersa en formato COO
 def obtener_columna_coo(j, num_filas, valores, filas, columnas):
     columna = [0] * num_filas
     for k in range(len(valores)):
@@ -53,6 +59,7 @@ def obtener_columna_coo(j, num_filas, valores, filas, columnas):
     return columna
 
 
+#Esta funcion obtiene una columna de una matriz dispersa en formato CSR
 def obtener_columna_csr(j, num_filas, valores, columnas, cfilas):
     columna = [0] * num_filas
     for i in range(num_filas):
@@ -63,6 +70,7 @@ def obtener_columna_csr(j, num_filas, valores, columnas, cfilas):
     return columna
 
 
+#Esta funcion obtiene una columna de una matriz dispersa en formato CSC
 def obtener_columna_csc(j, num_filas, valores, filas, ccolumnas):
     columna = [0] * num_filas
     for k in range(ccolumnas[j], ccolumnas[j+1]):
@@ -71,6 +79,7 @@ def obtener_columna_csc(j, num_filas, valores, filas, ccolumnas):
     return columna
 
 
+#Esta funcion modifica una posicion de una matriz dispersa en formato COO
 def modificar_posicion_coo(i, j, nuevo_valor, valores, filas, columnas):
 
     valores = list(valores)
@@ -106,6 +115,7 @@ def modificar_posicion_coo(i, j, nuevo_valor, valores, filas, columnas):
     return valores, filas, columnas
 
 
+#Esta funcion modifica una posicion de una matriz dispersa en formato CSR
 def modificar_posicion_csr(i, j, nuevo_valor, valores, columnas, cfilas):
     valores = list(valores)
     columnas = list(columnas)
@@ -155,6 +165,7 @@ def modificar_posicion_csr(i, j, nuevo_valor, valores, columnas, cfilas):
     return valores, columnas, cfilas
 
 
+#Esta funcion modifica una posicion de una matriz dispersa en formato CSC
 def modificar_posicion_csc(i, j, nuevo_valor, valores, filas, ccolumnas):
     valores = list(valores)
     filas = list(filas)
@@ -204,6 +215,7 @@ def modificar_posicion_csc(i, j, nuevo_valor, valores, filas, ccolumnas):
     return valores, filas, ccolumnas
 
 
+#Esta funcion suma dos matrices dispersas en formato COO
 def sumar_matrices_coo(valores1, filas1, columnas1, valores2, filas2, columnas2):
 
     suma = {}
@@ -235,6 +247,7 @@ def sumar_matrices_coo(valores1, filas1, columnas1, valores2, filas2, columnas2)
     return valores_resultado, filas_resultado, columnas_resultado
 
 
+#Esta funcion suma dos matrices dispersas en formato CSR
 def sumar_matrices_csr(valores1, columnas1, cfilas1, valores2, columnas2, cfilas2, num_filas, num_columnas):
 
     valores_resultado = []
@@ -273,6 +286,7 @@ def sumar_matrices_csr(valores1, columnas1, cfilas1, valores2, columnas2, cfilas
     return valores_resultado, columnas_resultado, cfilas_resultado
 
 
+#Esta funcion suma dos matrices dispersas en formato CSC
 def sumar_matrices_csc(valores1, filas1, ccolumnas1, valores2, filas2, ccolumnas2, num_filas, num_columnas):
 
     valores_resultado = []
@@ -311,6 +325,7 @@ def sumar_matrices_csc(valores1, filas1, ccolumnas1, valores2, filas2, ccolumnas
     return valores_resultado, filas_resultado, ccolumnas_resultado
 
 
+#Esta funcion obtiene la transpuesta de una matriz dispersa en formato COO
 def transpuesta_coo(valores, filas, columnas, num_filas_original, num_columnas_original):
 
     # En COO, la transpuesta es simplemente intercambiar filas y columnas
@@ -327,6 +342,7 @@ def transpuesta_coo(valores, filas, columnas, num_filas_original, num_columnas_o
     return valores_transp, filas_transp, columnas_transp
 
 
+#Esta funcion obtiene la transpuesta de una matriz dispersa en formato CSR
 def transpuesta_csr(valores, columnas, cfilas, num_filas_original, num_columnas_original):
 
     # La transpuesta de CSR es CSC
@@ -369,6 +385,7 @@ def transpuesta_csr(valores, columnas, cfilas, num_filas_original, num_columnas_
     return valores_transp, filas_transp, ccolumnas_transp
 
 
+#Esta funcion obtiene la transpuesta de una matriz dispersa en formato CSC
 def transpuesta_csc(valores, filas, ccolumnas, num_filas_original, num_columnas_original):
     
     # La transpuesta de CSC es CSR
